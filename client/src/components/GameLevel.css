@@ -133,6 +133,8 @@
   z-index: 2;
   caret-color: #00ff00;
   caret-shape: block;
+  box-sizing: border-box;
+  margin: 0;
 }
 
 .syntax-highlight {
@@ -145,6 +147,7 @@
   z-index: 1;
   overflow: hidden;
   background: transparent;
+  box-sizing: border-box;
 }
 
 .syntax-highlight pre {
@@ -155,11 +158,18 @@
   font-size: 14px;
   line-height: 1.5;
   color: #00ff00;
+  box-sizing: border-box;
+  position: relative;
 }
 
 .syntax-highlight code {
   background: transparent !important;
   color: #00ff00;
+  margin: 0;
+  padding: 0;
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+  line-height: 1.5;
 }
 
 .message-display {

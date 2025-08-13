@@ -32,7 +32,7 @@ const GameLevel = () => {
         const levelData = levels.find(l => l.level_number === parseInt(level));
         if (levelData) {
           setCurrentLevel(levelData);
-          setUserCode(levelData.solution); // Pre-fill with solution for demo
+          setUserCode(''); // Start with blank editor
         } else {
           setMessage('Level not found');
         }
@@ -212,7 +212,7 @@ const GameLevel = () => {
                 value={userCode}
                 onChange={(e) => setUserCode(e.target.value)}
                 className="code-textarea"
-                placeholder={`Write your ${language} code here...`}
+                placeholder={`// Write your ${language.toUpperCase()} code here...`}
                 disabled={submitting}
               />
               <div className="syntax-highlight">
@@ -221,15 +221,26 @@ const GameLevel = () => {
                   style={tomorrow}
                   customStyle={{
                     margin: 0,
+                    padding: '20px',
                     background: 'transparent',
                     fontSize: '14px',
                     fontFamily: 'Courier New, monospace',
-                    color: '#00ff00'
+                    color: '#00ff00',
+                    lineHeight: '1.5'
                   }}
                   showLineNumbers={false}
                   wrapLines={true}
+                  codeTagProps={{
+                    style: {
+                      margin: 0,
+                      padding: 0,
+                      fontFamily: 'Courier New, monospace',
+                      fontSize: '14px',
+                      lineHeight: '1.5'
+                    }
+                  }}
                 >
-                  {userCode || '// Start coding here...'}
+                  {userCode || '// Write your code here...'}
                 </SyntaxHighlighter>
               </div>
             </div>
