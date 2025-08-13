@@ -223,8 +223,11 @@ const GameLevel = () => {
                     margin: 0,
                     background: 'transparent',
                     fontSize: '14px',
-                    fontFamily: 'Courier New, monospace'
+                    fontFamily: 'Courier New, monospace',
+                    color: '#00ff00'
                   }}
+                  showLineNumbers={false}
+                  wrapLines={true}
                 >
                   {userCode || '// Start coding here...'}
                 </SyntaxHighlighter>
