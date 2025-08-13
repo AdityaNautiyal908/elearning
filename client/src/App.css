@@ -1,0 +1,291 @@
+.App {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  position: relative;
+  overflow-x: hidden;
+}
+
+.App::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(120, 219, 255, 0.3) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.App > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Retro scanlines effect */
+.scanlines {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    transparent 50%,
+    rgba(0, 0, 0, 0.1) 50%
+  );
+  background-size: 100% 4px;
+  pointer-events: none;
+  z-index: 2;
+  animation: scanlines 0.1s linear infinite;
+}
+
+@keyframes scanlines {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(4px); }
+}
+
+/* Retro CRT effect */
+.crt-effect {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    ellipse at center,
+    transparent 0%,
+    rgba(0, 0, 0, 0.1) 100%
+  );
+  pointer-events: none;
+  z-index: 3;
+}
+
+/* Game container with retro styling */
+.game-container {
+  min-height: 100vh;
+  padding: 20px;
+  background: 
+    linear-gradient(135deg, #1e3c72 0%, #2a5298 100%),
+    url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+  position: relative;
+}
+
+/* Retro navigation */
+.retro-nav {
+  background: linear-gradient(45deg, #2c3e50, #34495e);
+  border-bottom: 4px solid #ffffff;
+  padding: 15px 0;
+  box-shadow: 
+    0 0 0 4px #000000,
+    0 8px 0px #000000;
+  margin-bottom: 20px;
+}
+
+.retro-nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+.retro-nav li {
+  margin: 0;
+}
+
+.retro-nav a {
+  font-family: 'Press Start 2P', cursive;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 10px 20px;
+  border: 2px solid transparent;
+  transition: all 0.2s ease;
+  text-shadow: 2px 2px 0px #000000;
+}
+
+.retro-nav a:hover {
+  border-color: #00ff00;
+  background: rgba(0, 255, 0, 0.1);
+  box-shadow: 0 0 20px rgba(0, 255, 0, 0.3);
+}
+
+.retro-nav a.active {
+  border-color: #ff6b6b;
+  background: rgba(255, 107, 107, 0.1);
+  box-shadow: 0 0 20px rgba(255, 107, 107, 0.3);
+}
+
+/* Retro card grid */
+.retro-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Retro modal */
+.retro-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.retro-modal-content {
+  background: linear-gradient(45deg, #2c3e50, #34495e);
+  border: 4px solid #ffffff;
+  padding: 30px;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 
+    0 0 0 4px #000000,
+    0 0 0 8px #ffffff,
+    0 0 0 12px #000000,
+    20px 20px 0px #000000;
+}
+
+/* Retro progress bar */
+.retro-progress {
+  width: 100%;
+  height: 30px;
+  background: #000000;
+  border: 4px solid #ffffff;
+  position: relative;
+  overflow: hidden;
+}
+
+.retro-progress-fill {
+  height: 100%;
+  background: linear-gradient(45deg, #00ff00, #00cc00);
+  transition: width 0.3s ease;
+  position: relative;
+}
+
+.retro-progress-fill::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.3) 50%,
+    transparent 100%
+  );
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* Retro notification */
+.retro-notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+  border: 4px solid #ffffff;
+  color: #ffffff;
+  padding: 15px 20px;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 12px;
+  box-shadow: 
+    0 0 0 4px #000000,
+    8px 8px 0px #000000;
+  z-index: 1000;
+  animation: slideInRight 0.3s ease-out;
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .retro-nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .retro-nav a {
+    font-size: 12px;
+    padding: 8px 16px;
+  }
+  
+  .retro-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    padding: 15px;
+  }
+  
+  .retro-modal-content {
+    padding: 20px;
+    margin: 20px;
+  }
+  
+  .retro-notification {
+    right: 10px;
+    left: 10px;
+    font-size: 10px;
+    padding: 10px 15px;
+  }
+}
+
+/* Retro text effects */
+.retro-text-glow {
+  text-shadow: 
+    0 0 10px currentColor,
+    0 0 20px currentColor,
+    0 0 30px currentColor;
+}
+
+.retro-text-shadow {
+  text-shadow: 
+    2px 2px 0px #000000,
+    4px 4px 0px #333333;
+}
+
+.retro-text-outline {
+  -webkit-text-stroke: 2px #000000;
+  text-stroke: 2px #000000;
+}
+
+/* Retro button variations */
+.retro-button-success {
+  background: linear-gradient(45deg, #00ff00, #00cc00);
+}
+
+.retro-button-warning {
+  background: linear-gradient(45deg, #ffaa00, #ff8800);
+}
+
+.retro-button-danger {
+  background: linear-gradient(45deg, #ff0000, #cc0000);
+}
+
+.retro-button-info {
+  background: linear-gradient(45deg, #00aaff, #0088cc);
+} 

@@ -1,0 +1,391 @@
+.profile-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  position: relative;
+  overflow-x: hidden;
+}
+
+.profile-content {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.profile-header {
+  margin-bottom: 40px;
+  padding: 30px;
+}
+
+.profile-avatar-section {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.profile-avatar {
+  font-size: 4rem;
+  animation: bounce 2s infinite;
+}
+
+.profile-info {
+  flex: 1;
+  min-width: 300px;
+}
+
+.profile-name {
+  font-size: 2.5rem;
+  color: #00ff00;
+  text-shadow: 0 0 10px #00ff00, 4px 4px 0px #000000;
+  margin-bottom: 10px;
+}
+
+.profile-email {
+  font-size: 1.1rem;
+  color: #ffffff;
+  text-shadow: 1px 1px 0px #000000;
+  margin-bottom: 20px;
+  opacity: 0.8;
+}
+
+.edit-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 400px;
+}
+
+.edit-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.success-message {
+  background: linear-gradient(45deg, #00ff00, #00cc00);
+  border: 4px solid #ffffff;
+  color: #ffffff;
+  padding: 15px;
+  text-align: center;
+  font-weight: bold;
+  text-shadow: 1px 1px 0px #000000;
+  box-shadow: 0 0 0 4px #000000, 4px 4px 0px #000000;
+  margin-top: 20px;
+}
+
+.stats-overview {
+  margin-bottom: 40px;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: #ffffff;
+  text-shadow: 4px 4px 0px #000000;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.stat-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.stat-icon {
+  font-size: 2.5rem;
+}
+
+.stat-content {
+  flex: 1;
+}
+
+.stat-title {
+  font-size: 1rem;
+  margin-bottom: 5px;
+  color: #ffffff;
+  text-shadow: 1px 1px 0px #000000;
+}
+
+.stat-value {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #00ff00;
+  text-shadow: 2px 2px 0px #000000;
+}
+
+.language-progress-section {
+  margin-bottom: 40px;
+}
+
+.language-progress-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.language-progress-card {
+  padding: 20px;
+}
+
+.language-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.language-name {
+  font-size: 1.3rem;
+  color: #ffffff;
+  text-shadow: 2px 2px 0px #000000;
+  margin: 0;
+}
+
+.language-percentage {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #00ff00;
+  text-shadow: 1px 1px 0px #000000;
+}
+
+.language-progress-bar {
+  width: 100%;
+  height: 20px;
+  background: #000000;
+  border: 3px solid #ffffff;
+  box-shadow: 0 0 0 3px #000000, 3px 3px 0px #000000;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(45deg, #00ff00, #00cc00);
+  transition: width 0.5s ease;
+  box-shadow: 0 0 10px #00ff00;
+}
+
+.language-stats {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  color: #ffffff;
+  text-shadow: 1px 1px 0px #000000;
+}
+
+.completed-levels {
+  color: #00ff00;
+}
+
+.total-levels {
+  opacity: 0.7;
+}
+
+.recent-activity {
+  margin-bottom: 40px;
+}
+
+.activity-list {
+  padding: 20px;
+}
+
+.activity-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px 0;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.activity-item:last-child {
+  border-bottom: none;
+}
+
+.activity-icon {
+  font-size: 1.5rem;
+}
+
+.activity-content {
+  flex: 1;
+}
+
+.activity-text {
+  font-size: 1rem;
+  color: #ffffff;
+  text-shadow: 1px 1px 0px #000000;
+  margin: 0 0 5px 0;
+}
+
+.activity-score {
+  font-size: 0.9rem;
+  color: #00ff00;
+  text-shadow: 1px 1px 0px #000000;
+  font-weight: bold;
+}
+
+.no-activity {
+  text-align: center;
+  color: #ffffff;
+  text-shadow: 1px 1px 0px #000000;
+  opacity: 0.7;
+  font-style: italic;
+}
+
+.loading-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  color: #ffffff;
+  text-shadow: 2px 2px 0px #000000;
+}
+
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid #ffffff;
+  border-top: 4px solid #00ff00;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 20px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-10px); }
+  60% { transform: translateY(-5px); }
+}
+
+.error-message {
+  text-align: center;
+  color: #ffffff;
+  text-shadow: 2px 2px 0px #000000;
+  margin-top: 100px;
+}
+
+.error-message h2 {
+  color: #ff6b6b;
+  margin-bottom: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .profile-content {
+    padding: 15px;
+  }
+  
+  .profile-header {
+    padding: 20px;
+  }
+  
+  .profile-avatar-section {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+  
+  .profile-name {
+    font-size: 2rem;
+  }
+  
+  .profile-email {
+    font-size: 1rem;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  .stat-card {
+    padding: 15px;
+  }
+  
+  .stat-icon {
+    font-size: 2rem;
+  }
+  
+  .stat-value {
+    font-size: 1.5rem;
+  }
+  
+  .language-progress-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  .language-progress-card {
+    padding: 15px;
+  }
+  
+  .language-name {
+    font-size: 1.1rem;
+  }
+  
+  .language-percentage {
+    font-size: 1rem;
+  }
+  
+  .edit-form {
+    max-width: 100%;
+  }
+  
+  .edit-actions {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-name {
+    font-size: 1.5rem;
+  }
+  
+  .section-title {
+    font-size: 1.5rem;
+  }
+  
+  .stat-icon {
+    font-size: 1.5rem;
+  }
+  
+  .stat-value {
+    font-size: 1.3rem;
+  }
+  
+  .language-name {
+    font-size: 1rem;
+  }
+  
+  .language-percentage {
+    font-size: 0.9rem;
+  }
+  
+  .activity-text {
+    font-size: 0.9rem;
+  }
+  
+  .activity-score {
+    font-size: 0.8rem;
+  }
+  
+  .language-stats {
+    font-size: 0.8rem;
+  }
+} 
