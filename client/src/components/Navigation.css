@@ -35,10 +35,8 @@
 }
 
 .logo-link:hover {
-  color: #ffffff;
-  text-shadow: 
-    0 0 10px #00ff00,
-    2px 2px 0px #000000;
+  color: #00ff00;
+  text-shadow: 2px 2px 0px #000000;
 }
 
 .logo-icon {
@@ -67,39 +65,23 @@
   text-decoration: none;
   padding: 10px 20px;
   border: 2px solid transparent;
+  border-radius: 4px;
   transition: all 0.2s ease;
   text-shadow: 2px 2px 0px #000000;
   font-size: 0.8rem;
-  position: relative;
-  overflow: hidden;
-}
-
-.nav-link::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-  transition: left 0.5s;
-}
-
-.nav-link:hover::before {
-  left: 100%;
+  background: rgba(255, 255, 255, 0.1);
 }
 
 .nav-link:hover {
   border-color: #00ff00;
-  background: rgba(0, 255, 0, 0.1);
-  box-shadow: 0 0 20px rgba(0, 255, 0, 0.3);
-  transform: translateY(-2px);
+  background: rgba(0, 255, 0, 0.2);
+  color: #00ff00;
 }
 
 .nav-link.active {
   border-color: #ff6b6b;
-  background: rgba(255, 107, 107, 0.1);
-  box-shadow: 0 0 20px rgba(255, 107, 107, 0.3);
+  background: rgba(255, 107, 107, 0.2);
+  color: #ff6b6b;
 }
 
 .nav-user {
@@ -224,18 +206,14 @@
   100% { transform: scale(1); }
 }
 
-/* Hover effects for better interactivity */
-.nav-link:hover {
-  transform: translateY(-2px);
-  box-shadow: 
-    0 0 0 4px #000000,
-    0 0 20px rgba(0, 255, 0, 0.3);
+/* Simple focus and active states */
+.nav-link:focus {
+  outline: none;
+  border-color: #00ff00;
 }
 
-.nav-link.active:hover {
-  box-shadow: 
-    0 0 0 4px #000000,
-    0 0 20px rgba(255, 107, 107, 0.3);
+.nav-link:active {
+  transform: translateY(1px);
 }
 
 /* Retro button hover effect for logout */

@@ -22,7 +22,11 @@ const JWT_SECRET = process.env.JWT_SECRET || 'your-secret-key';
 // Middleware
 app.use(cors());
 app.use(express.json());
-app.use(express.static(path.join(__dirname, '../client/build')));
+
+// Serve static files only in production
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(path.join(__dirname, '../client/build')));
+}
 
 // Database setup
 const db = new sqlite3.Database('./server/database.sqlite', (err) => {
@@ -316,10 +320,17 @@ io.on('connection', (socket) => {
   });
 });
 
-// Serve React app for any non-API routes
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../client/build/index.html'));
-});
+// Serve React app for any non-API routes (only in production)
+if (process.env.NODE_ENV === 'production') {
+  app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../client/build/index.html'));
+  });
+} else {
+  // In development, redirect to React dev server
+  app.get('*', (req, res) => {
+    res.redirect('http://localhost:3000');
+  });
+}
 
 server.listen(PORT, () => {
   console.log(`🚀 Code Adventure Game server running on port ${PORT}`);
